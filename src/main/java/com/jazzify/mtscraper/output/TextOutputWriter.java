@@ -1,11 +1,11 @@
-package com.mtscraper.output;
+package com.jazzify.mtscraper.output;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class OutputText extends OutputBase {
-    public OutputText(String outputLocation, String outputFileName) {
+public class TextOutputWriter extends OutputWriter {
+    public TextOutputWriter(String outputLocation, String outputFileName) {
         super(outputLocation, outputFileName);
     }
 

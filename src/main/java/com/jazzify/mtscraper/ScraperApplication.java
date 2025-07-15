@@ -1,19 +1,14 @@
-package com.mtscraper;
-
-import com.mtscraper.core.ScraperEngine;
-import com.mtscraper.output.OutputText;
-
-import picocli.CommandLine;
+package com.jazzify.mtscraper;
 
 import java.util.concurrent.Callable;
 
+import com.jazzify.mtscraper.core.ScraperEngine;
+import com.jazzify.mtscraper.output.TextOutputWriter;
+
+import picocli.CommandLine;
+
 public class ScraperApplication implements Callable<Integer> {
-    @CommandLine.Option(
-        names={"-u", "--urls"},
-        split=",",
-        description="pipe-separated urls",
-        required=true
-    )
+    @CommandLine.Option(names = { "-u", "--urls" }, split = ",", description = "comma-separated urls", required = true)
     private String[] urls;
 
     public static void main(String[] args) {
@@ -28,7 +23,7 @@ public class ScraperApplication implements Callable<Integer> {
             ScraperEngine scraperEngine = new ScraperEngine(this.urls);
             String[] scrapedData = scraperEngine.scrapeUrls();
 
-            OutputText outputText = new OutputText("text/", "output.txt");
+            TextOutputWriter outputText = new TextOutputWriter("text/", "output.txt");
             String outputFilePath = outputText.processOutputText(scrapedData, true);
 
             System.out.println("Output written to: " + outputFilePath);

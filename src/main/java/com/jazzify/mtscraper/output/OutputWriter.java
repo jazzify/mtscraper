@@ -1,10 +1,10 @@
-package com.mtscraper.output;
+package com.jazzify.mtscraper.output;
 
-public abstract class OutputBase {
+public abstract class OutputWriter {
     protected String outputLocation;
     protected String outputFileName;
 
-    public OutputBase(String outputLocation, String outputFileName) {
+    public OutputWriter(String outputLocation, String outputFileName) {
         this.outputLocation = "tmp/scraped_results/" + outputLocation;
         this.outputFileName = outputFileName;
     }

@@ -1,12 +1,11 @@
-package com.mtscraper.core;
-
-import com.mtscraper.http.HttpClientManager;
+package com.jazzify.mtscraper.core;
 
 import java.net.URI;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jazzify.mtscraper.http.HttpClientManager;
 
 public class ScraperEngine {
     private final String[] urls;
