@@ -1,3 +1,12 @@
+tmp/
+
+# Java
+target/
+
+# Editor
+.idea/
+.vscode/
+
 # Compiled class file
 *.class
 
